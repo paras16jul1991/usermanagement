@@ -5,20 +5,15 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
-/**
- * Created by jt on 12/18/15.
- */
 @Entity
 public class Role extends AbstractDomainClass {
 	private String role;
-	@ManyToMany(fetch = FetchType.LAZY, mappedBy="roles")
-	//@JoinTable(name = "USER_ROLE", joinColumns = @JoinColumn(name = "role_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
-	private List<User> users = new ArrayList();
-	
+	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "roles")
+	// @JoinTable(name = "USER_ROLE", joinColumns = @JoinColumn(name =
+	// "role_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
+	private List<User> users = new ArrayList<>();
 
 	public String getRole() {
 		return role;

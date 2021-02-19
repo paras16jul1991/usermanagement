@@ -15,6 +15,7 @@ public class User extends AbstractDomainClass {
 	private String username;
 	@Transient
 	private String password;
+	private String email;
 	private String encryptedPassword;
 	private Boolean enabled = true;
 	@ManyToMany(fetch = FetchType.EAGER)
@@ -82,5 +83,13 @@ public class User extends AbstractDomainClass {
 
 	public void setFailedLoginAttempts(Integer failedLoginAttempts) {
 		this.failedLoginAttempts = failedLoginAttempts;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }
